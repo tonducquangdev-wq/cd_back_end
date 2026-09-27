@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản - Hệ Thống Quản Lý Người Dùng</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card" style="max-width: 480px;">
+            <div class="text-center mb-4">
+                <div class="auth-brand justify-content-center mb-2">
+                    <i class="bi bi-person-plus-fill"></i> System Admin
+                </div>
+                <h4 class="fw-bold tracking-tight">Tạo Tài Khoản Mới</h4>
+                <p class="text-muted small">Điền thông tin bên dưới để đăng ký tài khoản thành viên</p>
+            </div>
+
+            <!-- Vùng hiển thị thông báo lỗi / thành công -->
+            <div id="alertContainer"></div>
+
+            <form id="registerForm" novalidate>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Họ và Tên</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="name" placeholder="Nguyễn Văn A" required>
+                    </div>
+                    <div class="invalid-feedback" id="err-name"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Địa chỉ Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="invalid-feedback" id="err-email"></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="age" class="form-label">Tuổi</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                            <input type="number" class="form-control" id="age" placeholder="25" min="1" max="120" required>
+                        </div>
+                        <div class="invalid-feedback" id="err-age"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="role" class="form-label">Vai Trò</label>
+                        <select class="form-select" id="role">
+                            <option value="user" selected>Người dùng (User)</option>
+                            <option value="admin">Quản trị viên (Admin)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-key"></i></span>
+                        <input type="password" class="form-control" id="password" placeholder="Tối thiểu 6 ký tự" required>
+                    </div>
+                    <div class="invalid-feedback" id="err-password"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-4 py-2" id="btnRegister">
+                    <span id="btnText"><i class="bi bi-check-circle me-2"></i> Hoàn Tất Đăng Ký</span>
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                </button>
+
+                <div class="text-center">
+                    <span class="text-muted small">Đã có tài khoản?</span>
+                    <a href="login.html" class="text-decoration-none fw-bold small ms-1" style="color: var(--primary);">Đăng nhập ngay</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Page Logic JS -->
+    <script src="js/register.js"></script>
+</body>
+</html>

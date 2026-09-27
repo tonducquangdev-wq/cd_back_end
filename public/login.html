@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - Hệ Thống Quản Lý Người Dùng</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="text-center mb-4">
+                <div class="auth-brand justify-content-center mb-2">
+                    <i class="bi bi-shield-lock-fill"></i> System Admin
+                </div>
+                <h4 class="fw-bold tracking-tight">Đăng Nhập Tài Khoản</h4>
+                <p class="text-muted small">Nhập email và mật khẩu của bạn để truy cập bảng điều khiển</p>
+            </div>
+
+            <!-- Vùng hiển thị thông báo lỗi / thành công -->
+            <div id="alertContainer"></div>
+
+            <form id="loginForm" novalidate>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Địa chỉ Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="nguyenvana@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-key"></i></span>
+                        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-4 py-2" id="btnLogin">
+                    <span id="btnText"><i class="bi bi-box-arrow-in-right me-2"></i> Đăng Nhập Hệ Thống</span>
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                </button>
+
+                <div class="text-center">
+                    <span class="text-muted small">Chưa có tài khoản?</span>
+                    <a href="register.html" class="text-decoration-none fw-bold small ms-1" style="color: var(--primary);">Tạo tài khoản mới</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Page Logic JS -->
+    <script src="js/login.js"></script>
+</body>
+</html>
